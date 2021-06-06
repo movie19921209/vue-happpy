@@ -1,26 +1,20 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-	<p>{{username5}}</p>
+	<itemcontainer father-component="home"></itemcontainer>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import itemcontainer from '../components/itemcontainer.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    itemcontainer
   },
-	computed: {
-		username5 : function() {
-		console.log("11111111111111");
-		console.log(this);
-		return "rr";
-	}
+	created() {
+		console.log("component home is created!");
 	}
 }
 </script>
