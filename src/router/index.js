@@ -2,14 +2,13 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
+import Foo from '../views/Foo.vue'
+import Bar from '../views/Bar.vue'
 import Account from '../views/account.vue'
+import Login from '../views/Login.vue'
+import Register from '../views/Register.vue'
 
 Vue.use(VueRouter)
-
-const Foo = {template : '<div>foo</div>'};
-const Bar = {template : '<div>bar</div>'};
-const Login = {template: '<div>登录的组件显示</div>'};
-const Register = {template: '<div>注册的组件显示</div>'};
 
 const routes = [
   {
