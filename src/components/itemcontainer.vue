@@ -1,11 +1,20 @@
 <template>
 	<section>
-		<span v-if="fatherComponent == 'home'">在home下</span>
-		<span v-if="fatherComponent == 'item'">在item组件下</span>
-		<h1>this is itemconstainer!</h1>
+		<header>
+			<span v-if="fatherComponent == 'home'">在home下</span>
+			<span v-if="fatherComponent == 'item'">在item组件下</span>
+			<h1>this is itemconstainer!</h1>
+		</header>
+
+		<div v-if="fatherComponent == 'home'">
+			<div class="home_logo item_container_style"></div>
+			<router-link to="item" class="start button_style"></router-link>
+		</div>
 		
-		<span class="next_item button_style" @click="nextItem" v-if="itemNum == 0"></span>
-		<span class="submit_item button_style" @click="submitAnswer" v-else></span>
+		<div v-if="fatherComponent == 'item'">
+			<span class="next_item button_style" @click="nextItem" v-if="itemNum == 0"></span>
+			<span class="submit_item button_style" @click="submitAnswer" v-else></span>
+		</div>
 	</section>
 </template>
 
@@ -16,7 +25,7 @@ export default {
 	props:['fatherComponent'],
 	data() {
 		return {
-			itemNum: 0
+			itemNum: 3
 		}
 	},
 	created() {
@@ -37,6 +46,22 @@ export default {
 </script>
 
 <style>
+	.home_logo{
+		background-image: url(../images/1-2.png);
+		background-size: 13.142rem 100%;
+		background-position: right center;
+	}
+	.item_container_style{
+		height: 11.625rem;
+		width: 13.15rem;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: 4.1rem;
+		left: 1rem;
+	}
+	.start{
+		background-image: url(../images/1-4.png);
+	}
 	.button_style{
 		display: block;
 		height: 2.1rem;
